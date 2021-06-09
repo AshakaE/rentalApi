@@ -82,5 +82,3 @@ test:
 production:
   <<: *default
   database: rentalApi_production
-  username: rentalApi
-  password: <%= ENV['RENTALAPI_DATABASE_PASSWORD'] %>
