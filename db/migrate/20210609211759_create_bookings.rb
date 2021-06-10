@@ -1,6 +1,7 @@
 class CreateBookings < ActiveRecord::Migration[6.1]
   def change
     create_table :bookings do |t|
+      t.string :name
       t.datetime :date
       t.string :created_by
       t.integer :price
