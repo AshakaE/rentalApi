@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :bookings, foreign_key: :created_by
   has_many :cars, through: :bookings 
 
-  validates_presence_of :name, :email, :password_digest
+  validates_presence_of :name, :password_digest
 end

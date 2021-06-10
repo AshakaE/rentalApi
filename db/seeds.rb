@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+20.times do
+  car = Car.create(name: Faker::Vehicle.make, grade: Faker::Number.between(from: 1, to: 5))
+end
