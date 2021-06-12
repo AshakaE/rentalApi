@@ -1,6 +1,8 @@
 module Api
   module V1
     class UsersController < ApplicationController
+      skip_before_action :verify_authenticity_token
+      
       def index
         @users = User.all
         json_response(@users)
@@ -8,7 +10,7 @@ module Api
 
       def create
         @user =  User.create!(user_params)
-        json_response(response, :created)
+        json_response({message: 'Account created successfully'})
       end
 
       private

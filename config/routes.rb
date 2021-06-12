@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :cars, only: %i[index create show]
 
       post 'login', to: 'authentication#create'
-      post 'register', to: 'users#create'
+      post 'signup', to: 'users#create'
     end
   end
 end
