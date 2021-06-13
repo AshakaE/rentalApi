@@ -12,3 +12,5 @@
   booking = Booking.create(name: Faker::Lorem.sentence(word_count: 3), date: Faker::Date.between(from: 2.days.ago, to: 2.days.from_now), created_by: User.first.name, price: Faker::Number.number(digits: 3), duration: Faker::Number.between(from: 1, to: 24), car: Car.all.sample, user: User.all.sample
   )
 end
+
+# admin = User.create(name: 'Ashaka', password: 'Admin95', password_digest: 'Admin95', admin: true)

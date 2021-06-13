@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :bookings, only: %i[create show update destroy]
+      resources :bookings, only: %i[index create show update destroy]
+      # get 'allbookings', to: 'bookings#index'
       resources :cars, only: %i[index create show]
     end    
   end

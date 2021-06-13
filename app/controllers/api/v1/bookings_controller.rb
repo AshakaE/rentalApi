@@ -2,11 +2,12 @@ module Api
   module V1
     class BookingsController < ApplicationController
       skip_before_action :verify_authenticity_token, only: :create
+      before_action :validate_admin!, only: :index
 
-      # def index
-      #   @bookings = Booking.all.paginate(page: params[:page], per_page: 10)
-      #   json_response(@bookings)
-      # end
+      def index
+        @bookings = Booking.all.paginate(page: params[:page], per_page: 10)
+        json_response(@bookings)
+      end
 
       def create
         @booking = current_user.bookings.create!(book_params)
