@@ -1,7 +1,7 @@
 module Api
   module V1
     class BookingsController < ApplicationController
-      skip_before_action :verify_authenticity_token, only: :create
+      skip_before_action :verify_authenticity_token, only: %i[create destroy]
       before_action :validate_admin!, only: :index
 
       def index
@@ -17,6 +17,17 @@ module Api
       def show
         @bookings = Booking.where(user_id: current_user)
         json_response(@bookings)
+      end
+
+      def update
+        @booking = Booking.find(params[:id])
+        @booking.update(book_params)
+        json_response({message: "#{@booking.name} updated successfully"})
+      end
+
+      def destroy
+        @booking = Booking.find(params[:id]).destroy
+        json_response({message: "#{@booking.name} deleted successfully"})
       end
 
       private 
