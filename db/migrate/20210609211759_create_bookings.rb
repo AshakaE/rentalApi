@@ -7,7 +7,9 @@ class CreateBookings < ActiveRecord::Migration[6.1]
       t.integer :price
       t.integer :duration
       t.references :car, null: false, foreign_key: true
+      t.string :car_name
       t.references :user, null: false, foreign_key: true
+      t.string :user_name
 
       t.timestamps
     end

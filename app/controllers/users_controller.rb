@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token, :authorize_request, only: :create
+  before_action :validate_admin!, only: :index
 
   def index
     @users = User.all
@@ -11,6 +12,21 @@ class UsersController < ApplicationController
     auth_token = AuthenticateUser.new(user.name, user.password).call
     response = { message: Message.account_created, auth_token: auth_token }
     json_response(response, :created)
+  end
+
+  def show
+    @user = User.find(current_user.id)
+    user = @user.name
+    json_response(user)
+  end
+
+  def update
+    @user.update(user_params)
+  end
+
+  def destroy
+    @user.destroy
+    head :no_content
   end
 
   private

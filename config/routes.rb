@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end    
   end
   
-  resources :users, only: :index
+  resources :users, only: %i[index show]
   post 'login', to: 'authentication#authenticate'
   post 'signup', to: 'users#create'
 end

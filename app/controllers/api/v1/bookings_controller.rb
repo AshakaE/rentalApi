@@ -16,6 +16,11 @@ module Api
 
       def show
         @bookings = Booking.where(user_id: current_user)
+      
+        @bookings.each do |u|
+          u.car_name = Car.find(u.car_id).name
+          u.user_name = User.find(u.user_id).name
+        end
         json_response(@bookings)
       end
 

@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 2021_06_09_211759) do
     t.integer "price"
     t.integer "duration"
     t.bigint "car_id", null: false
+    t.string "car_name"
     t.bigint "user_id", null: false
+    t.string "user_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["car_id"], name: "index_bookings_on_car_id"
