@@ -1,11 +1,27 @@
-# Title TBA
+# RENTALS API BUILT WITH RAILS 6
 
-> Description TBA
+> A car rental API built with Rails, it authenticates and authorizes with JWT. Using this API, users can rent certain cars and get a fixed price based on the duration.
 
 ## Built With
 
 - Ruby v2.7.2
 - Ruby on Rails v5.2.4
+- PostgreSQL v12.5
+
+## Current API Endpoints
+
+| Endpoint                | Functionality                |
+|-------------------------|------------------------------|
+| POST /signup            | Signup                       |
+| POST /login             | Login                        |
+| GET /users              | show user                    |
+| PUT /user/:id           | Update a user                |
+| DELETE /user/:id        | Update user account          |
+| GET /api/v1/cars        | List all cars                |
+| GET /api/v1/bookings    | show user bookings           |
+| POST /api/v1/bookings   | book a car                   |
+| PUT /api/v1/bookings    | update booking               |
+| DELETE /api/v1/bookings | delete booking               |
 
 ## Live Demo
 
@@ -23,7 +39,8 @@ Postgres: >=12.5
 
 ### Setup
 
-- Clone the repository in the folder of your choice:<br> 
+- git clone `git@github.com:AshakaE/rentalApi.git`
+-cd rentalApi
 
 - Install required gems :<br>
 `bundle install`
@@ -35,28 +52,26 @@ Postgres: >=12.5
 
 ### Usage
 
-- Start server with:
-`rails server` or `rails s`
+- Install required gems :<br>
+`bundle install`
 
-- Open `http://localhost:3000/` in your browser.
+- Setup the database :<br>
+`rails db:create`<br>
+`rails db:migrate`
 
 ### Run tests
 
 - To run tests with RSpec :
-`rspec --format documentation`
-
-### Deployment
-
-TBA
+`bundle exec rspec`
 
 👤 **Ashaka Egerega**
 
-- GitHub: [@AshakaE](https://github.com/AshakaE)
-- LinkedIn: [AshakaE](https://www.linkedin.com/in/AshakaE/)
+- GitHub: [@AshakaE](git@github.com:AshakaE/rentalApi)
+- LinkedIn: [AshakaE](https://www.linkedin.com/in/AshakaE/rentalApi/issues)
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](issues/).
 
