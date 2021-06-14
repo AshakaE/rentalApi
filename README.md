@@ -5,7 +5,7 @@
 ## Built With
 
 - Ruby v2.7.2
-- Ruby on Rails v5.2.4
+- Ruby on Rails v6.1.3
 - PostgreSQL v12.5
 
 ## Current API Endpoints
