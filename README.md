@@ -66,14 +66,14 @@ Postgres: >=12.5
 
 👤 **Ashaka Egerega**
 
-- GitHub: [@AshakaE](git@github.com:AshakaE/rentalApi)
-- LinkedIn: [AshakaE](https://www.linkedin.com/in/AshakaE/rentalApi/issues)
+- GitHub: [@AshakaE](https://www.github.com/AshakaE/)
+- LinkedIn: [AshakaE](https://www.linkedin.com/in/AshakaE/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/AshakaE/rentalApi/issues).
 
 ## Show your support
 
