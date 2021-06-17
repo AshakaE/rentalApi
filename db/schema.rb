@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_124748) do
+ActiveRecord::Schema.define(version: 2021_06_17_173830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,26 +18,27 @@ ActiveRecord::Schema.define(version: 2021_06_17_124748) do
   create_table "bookings", force: :cascade do |t|
     t.string "name"
     t.datetime "date"
-    t.string "created_by"
+    t.string "createdBy"
     t.integer "price", null: false
     t.integer "duration"
-    t.bigint "car_id", null: false
-    t.string "car_name"
-    t.string "car_model"
-    t.bigint "user_id", null: false
-    t.string "user_name"
+    t.bigint "carId", null: false
+    t.string "carName"
+    t.string "carModel"
+    t.bigint "userId", null: false
+    t.string "userName"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image_url"
-    t.index ["car_id"], name: "index_bookings_on_car_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.string "imageUrl"
+    t.integer "year"
+    t.index ["carId"], name: "index_bookings_on_carId"
+    t.index ["userId"], name: "index_bookings_on_userId"
   end
 
   create_table "cars", force: :cascade do |t|
     t.string "name"
     t.string "model"
     t.integer "year"
-    t.string "image_url"
+    t.string "imageUrl"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -50,6 +51,6 @@ ActiveRecord::Schema.define(version: 2021_06_17_124748) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "bookings", "cars"
-  add_foreign_key "bookings", "users"
+  add_foreign_key "bookings", "cars", column: "carId"
+  add_foreign_key "bookings", "users", column: "userId"
 end

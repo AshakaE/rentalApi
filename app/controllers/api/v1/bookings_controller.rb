@@ -39,10 +39,10 @@ module Api
           :name,
           :date,
           :price,
-          :created_by,
+          :createdBy,
           :duration,
-          :car_id,
-          :user_id
+          :carId,
+          :userId
         )
       end
     end
