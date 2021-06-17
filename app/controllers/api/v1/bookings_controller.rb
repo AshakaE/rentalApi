@@ -6,6 +6,7 @@ module Api
 
       def index
         @bookings = Booking.all.paginate(page: params[:page], per_page: 10)
+        other_params(@bookings)
         json_response(@bookings)
       end
 
@@ -15,12 +16,8 @@ module Api
       end
 
       def show
-        @bookings = Booking.where(user_id: current_user)
-        @bookings.each do |u|
-          u.car_name = Car.find(u.car_id).name
-          u.car_model = User.find(u.user_id).model
-          u.user_name = User.find(u.user_id).name
-        end
+        @bookings = Booking.where(id: current_user.id)
+        other_params(@bookings)
         json_response(@bookings)
       end
 

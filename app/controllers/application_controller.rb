@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Response
+  include Params
   include ExceptionHandler
 
   before_action :authorize_request
