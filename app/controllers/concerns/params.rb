@@ -8,7 +8,7 @@ module Params
       u.imageUrl = car.imageUrl
       u.carModel = car.model
       u.userName = u.createdBy
-      # u.userName = User.find(u.userId).name
+      u.userId = User.find_by(name: u.createdBy).id
     end
   end
 end
