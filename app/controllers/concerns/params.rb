@@ -1,14 +1,14 @@
 module Params
   def other_params(cas)
     cas.each do |u|
-      # u.userId = User.find_by(name: u.createdBy).id
       car = Car.find(u.carId)
+      user = User.find(u.userId)
       u.year = car.year
       u.carName = car.name
       u.imageUrl = car.imageUrl
       u.carModel = car.model
-      u.userName = u.createdBy
-      u.userId = User.find_by(name: u.createdBy).id
+      u.createdBy = user.name
+      u.userName = user.name
     end
   end
 end
