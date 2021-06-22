@@ -1,7 +1,7 @@
 module Api
   module V1
     class BookingsController < ApplicationController
-      skip_before_action :verify_authenticity_token, only: %i[create destroy]
+      skip_before_action :verify_authenticity_token, only: %i[create update destroy]
       before_action :validate_admin!, only: :index
 
       def index

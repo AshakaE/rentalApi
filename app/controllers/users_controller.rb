@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token, :authorize_request, only: :create
+  skip_before_action :verify_authenticity_token, :authorize_request, only: %i[create update destroy]
   before_action :validate_admin!, only: :index
 
   def index
