@@ -7,6 +7,6 @@ RSpec.describe Booking, type: :model do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:date) }
   it { should validate_presence_of(:price) }
-  it { should validate_presence_of(:created_by) }
+  it { should validate_presence_of(:createdBy) }
   it { should validate_presence_of(:duration) }
 end
