@@ -11,8 +11,12 @@ module Api
       end
 
       def create
-        @booking = current_user.bookings.create!(book_params)
-        json_response({message: 'Successfully booked.'})
+        @booking = current_user.bookings.build(book_params)
+        if(@booking.save)
+          json_response({message: 'Successfully booked.'})
+        else
+          json_response({message: 'Something went wrong'})
+        end
       end
 
       def show
