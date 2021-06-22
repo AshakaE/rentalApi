@@ -16,7 +16,7 @@ module Api
       end
 
       def show
-        @bookings = Booking.where(id: current_user.id)
+        @bookings = Booking.where(userId: current_user.id)
         other_params(@bookings)
         json_response(@bookings)
       end
