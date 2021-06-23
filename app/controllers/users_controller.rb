@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token, :authorize_request, only: %i[create update destroy]
-  before_action :validate_admin!, only: :index
+  before_action :validate_admin!, only: :index 
 
   def index
     @users = User.all
@@ -16,20 +16,20 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
+    @user = User.find(@current_user.id)
     user = @user.name
     json_response(user)
   end
 
   def update
-    @user = User.find(current_user.id)
-    @user.update(user_params)
+    @user = User.find(params[:id])
+    @user.update!(user_params)
     user = @user.name
     json_response({message: "#{user} updated successfully."})
   end
 
   def destroy
-    @user.destroy
+    User.find(params[:id]).destroy
     head :no_content
   end
 
