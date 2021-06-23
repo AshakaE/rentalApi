@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(current_user.id)
     @user.update(user_params)
     user = @user.name
     json_response({message: "#{user} updated successfully."})
