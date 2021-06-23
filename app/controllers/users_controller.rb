@@ -23,6 +23,8 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
+    user = @user.name
+    json_response({message: "#{user} updated successfully."})
   end
 
   def destroy

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end    
   end
   
-  resources :users, only: %i[index show]
+  resources :users
   post 'login', to: 'authentication#authenticate'
   post 'signup', to: 'users#create'
 end
