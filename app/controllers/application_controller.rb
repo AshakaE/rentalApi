@@ -9,13 +9,11 @@ class ApplicationController < ActionController::Base
   private
 
   def authorize_request
-    @current_user = (AuthorizeApiRequest.new(request.headers).call[:user])
+    @current_user = AuthorizeApiRequest.new(request.headers).call[:user]
   end
 
   def validate_admin!
-    @current_user = (AuthorizeApiRequest.new(request.headers).call[:user]) 
-    unless @current_user.admin == true
-      redirect_to action: "show", id: @current_user.id
-    end
+    @current_user = AuthorizeApiRequest.new(request.headers).call[:user]
+    redirect_to action: 'show', id: @current_user.id unless @current_user.admin == true
   end
 end

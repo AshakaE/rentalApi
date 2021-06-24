@@ -3,7 +3,7 @@ class AuthenticationController < ApplicationController
 
   def authenticate
     @auth_token = AuthenticateUser.new(auth_params[:name], auth_params[:password]).call
-    @uid =  User.find_by(name: auth_params[:name]).id
+    @uid = User.find_by(name: auth_params[:name]).id
     json_response(uid: @uid, auth_token: @auth_token)
   end
 

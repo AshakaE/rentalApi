@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :bookings, foreign_key: :createdBy
-  has_many :cars, through: :bookings 
+  has_many :cars, through: :bookings
 
   validates_presence_of :name, :password_digest
 end

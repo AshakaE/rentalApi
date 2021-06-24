@@ -30,15 +30,15 @@ gem 'rack-cors'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'active_model_serializers', '~> 0.10.12'
-gem 'will_paginate', '~> 3.3'
-gem 'jwt'
 gem 'hirb', '~> 0.7.3'
+gem 'jwt'
+gem 'will_paginate', '~> 3.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   gem 'faker'
+  gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
 end
 
 group :development do
@@ -57,9 +57,9 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
+  gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
-  gem 'database_cleaner'
   gem 'webdrivers'
 end
 

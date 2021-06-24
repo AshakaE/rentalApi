@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# rubocop:disable Layout/LineLength
 RSpec.describe ApplicationController, type: :controller do
   let!(:user) { create(:user) }
   let(:headers) { { 'Authorization' => token_generator(user.id) } }
@@ -25,3 +25,4 @@ RSpec.describe ApplicationController, type: :controller do
     end
   end
 end
+# rubocop:enable Layout/LineLength

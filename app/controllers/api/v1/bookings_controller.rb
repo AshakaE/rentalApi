@@ -12,10 +12,10 @@ module Api
 
       def create
         @booking = current_user.bookings.build(book_params)
-        if(@booking.save)
-          json_response({message: 'Successfully booked.'})
+        if @booking.save
+          json_response({ message: 'Successfully booked.' })
         else
-          json_response({message: 'Something went wrong'})
+          json_response({ message: 'Something went wrong' })
         end
       end
 
@@ -28,15 +28,15 @@ module Api
       def update
         @booking = Booking.find(params[:id])
         @booking.update(book_params)
-        json_response({message: "#{@booking.name} updated successfully"})
+        json_response({ message: "#{@booking.name} updated successfully" })
       end
 
       def destroy
         @booking = Booking.find(params[:id]).destroy
-        json_response({message: "#{@booking.name} deleted successfully"})
+        json_response({ message: "#{@booking.name} deleted successfully" })
       end
 
-      private 
+      private
 
       def book_params
         params.permit(

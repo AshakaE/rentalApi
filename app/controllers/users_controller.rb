@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token, :authorize_request, only: %i[create update destroy]
-  before_action :validate_admin!, only: :index 
+  before_action :validate_admin!, only: :index
 
   def index
     @users = User.all
@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    user =  User.create!(user_params)
+    user = User.create!(user_params)
     auth_token = AuthenticateUser.new(user.name, user.password).call
-    @uid =  user.id
-    response = {uid: @uid, auth_token: auth_token, message: Message.account_created}
+    @uid = user.id
+    response = { uid: @uid, auth_token: auth_token, message: Message.account_created }
     json_response(response, :created)
   end
 
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update!(user_params)
     user = @user.name
-    json_response({message: "#{user} updated successfully."})
+    json_response({ message: "#{user} updated successfully." })
   end
 
   def destroy

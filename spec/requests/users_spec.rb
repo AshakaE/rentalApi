@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe "Users API", type: :request do
+RSpec.describe 'Users API', type: :request do
   let(:user) { build(:user) }
   let(:headers) { valid_headers.except('Authorization') }
   let(:valid_attributes) do
     attributes_for(:user, password_confrimation: user.password)
   end
-
+  # rubocop:disable Layout/LineLength
   describe 'POST /signup' do
     context 'when valid request' do
       before { post '/signup', params: valid_attributes.to_json, headers: headers }
@@ -36,4 +36,5 @@ RSpec.describe "Users API", type: :request do
       end
     end
   end
+  # rubocop:enable Layout/LineLength
 end
