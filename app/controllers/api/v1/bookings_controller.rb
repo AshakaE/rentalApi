@@ -20,7 +20,7 @@ module Api
       end
 
       def show
-        @bookings = Booking.find_by(userId: current_user.id)
+        @bookings = Booking.booked(current_user.id)
         other_params(@bookings)
         json_response(@bookings)
       end
