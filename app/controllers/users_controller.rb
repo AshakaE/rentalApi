@@ -17,8 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(@current_user.id)
-    user = @user.name
-    json_response(user)
+    json_response(@user)
   end
 
   def update
