@@ -5,6 +5,6 @@ class Booking < ApplicationRecord
   validates_presence_of :name, :date, :price, :createdBy, :duration
 
   def self.booked(value)
-    where(id: "#{ value }%")
+    where(userId: "#{ value }%")
   end
 end
