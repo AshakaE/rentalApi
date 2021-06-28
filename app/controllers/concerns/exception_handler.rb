@@ -23,6 +23,6 @@ module ExceptionHandler
   end
 
   def unauthorized_request(msg)
-    json_response({ message: msg.message }, :account_created)
+    json_response({ message: msg.message }, :internal_server_error)
   end
 end
